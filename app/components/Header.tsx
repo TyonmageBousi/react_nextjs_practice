@@ -1,29 +1,19 @@
-import React from 'react';
+import React from "react"
+import { Menu } from "../types/headerType"
 
-export default function Header() {
-
-
-    type Menu = {
-        home: string,
-        message: string,
-        overview: string
-    }
-    const menu: Menu = {
-        home: "ホーム",
-        message: "メッセージ",
-        overview: "概要"
-    }
+export default function Header({menu}: {menu:Menu[]}) {
 
 
-    return (
-        <div>
-            <header>
-                <h1>ちょんまげ</h1>
-                <ul>
-
-                    {Object.values(menu).map((label) => <li>{label}</li>)}
-                </ul>
-            </header>
-        </div>
-    );
-};
+  return (
+    <div>
+      <header>
+        <h1>ちょんまげ</h1>
+        <ul>
+          {menu.map((item) => (
+            <li key={item.label}>{item.label}</li>
+          ))}
+        </ul>
+      </header>
+    </div>
+  )
+}
