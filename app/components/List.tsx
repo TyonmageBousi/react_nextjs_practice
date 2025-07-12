@@ -1,3 +1,18 @@
+import image1 from '../assets/Webメディア運営.png'
+import image2 from '../assets/スクール事業.png'
+import image3 from '../assets/人材紹介業.png'
+import Image, { StaticImageData } from 'next/image';
+type ImageItem = {
+    src: StaticImageData;
+    label: string;
+};
+
+const images: ImageItem[] = [
+    { src: image1, label: "Webメディア運営" },
+    { src: image2, label: "スクール事業" },
+    { src: image3, label: "人材紹介業" }
+]
+
 export default function List() {
     return (
         <div>
@@ -5,15 +20,15 @@ export default function List() {
                 <p>サービス</p>
             </div>
             <ul>
-                <li>
-                    {/* <img src="/image/人材紹介業.png" alt="人材紹介業の画像" /> */}
-                </li>
-                <li>
-                    {/* <img src="/image/スクール事業.png" alt="スクール事業の画像" /> */}
-                </li>
-                <li>
-                    {/* <img src="/image/Webメディア運営.png" alt="WEBメディア運営の画像" /> */}
-                </li>
+                {images.map((image, index) => (
+                    <li key={index}>
+                        <Image
+                            src={image.src}
+                            alt={image.label}
+                            fill
+                        />
+                    </li>
+                ))}
             </ul>
         </div>
     )

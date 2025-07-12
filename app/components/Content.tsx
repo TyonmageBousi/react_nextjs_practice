@@ -17,7 +17,7 @@ export default function Content() {
 
     const [contents, setContent] = useState<Content[]>([])
 
-    const up = () => {
+    const handleSubmit = () => {
         setContent([...contents, value])
         setValue({
             date: "",
@@ -25,19 +25,24 @@ export default function Content() {
         })
     }
     return (
-        <div>
-            <p>日付を入れてください</p>
-            <input name="date" value={value.date} onChange={(e) => setValue({ ...value, date: e.target.value })} />
-            <p>投稿内容を入れてください</p>
-            <input name="news" value={value.news} onChange={(e) => setValue({ ...value, news: e.target.value })} />
-            <button onClick={up}>投稿する</button>
-            <ul>
-                {contents.map((content) =>
-                    <li>
-                        <div>{content.date}</div>
-                        <div>{content.news}</div>
-                    </li>)}
-            </ul>
+        <div className="contents">
+            <div>
+                <h1>ニュース</h1>
+            </div>
+            <div>
+                <p>日付を入れてください</p>
+                <input name="date" value={value.date} onChange={(e) => setValue({ ...value, date: e.target.value })} />
+                <p>投稿内容を入れてください</p>
+                <input name="news" value={value.news} onChange={(e) => setValue({ ...value, news: e.target.value })} />
+                <button onClick={handleSubmit}>投稿する</button>
+                <ul>
+                    {contents.map((content) =>
+                        <li>
+                            <div>{content.date}</div>
+                            <div>{content.news}</div>
+                        </li>)}
+                </ul>
+            </div>
         </div>
     )
 }

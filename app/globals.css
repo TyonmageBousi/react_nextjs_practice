@@ -34,12 +34,13 @@ header {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  height: 10vh;
+  height: 90px;
   margin: 0 auto;
 }
 
 header h1 {
-  width: 50%;
+  width: 168px;
+  height: 33px;
 }
 
 header ul {
@@ -54,23 +55,27 @@ header ul {
 
 header li {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
+  width: 50px;
+
 }
 
 .page-top {
+  margin: auto;
   width: 100%;
-  height: 90vh;
-  position: relative; 
+  height: 600px;
+  object-fit: cover;
   /* 画面高さいっぱい */
 }
 
-.page-top .main_image {
-  object-fit: cover;
-  /* 要素いっぱいに画像を表示（はみ出た部分は削除） */
-  width: 100%;
-  /* 親要素の幅いっぱい */
-  height: 100%;
-  /* 親要素の高さいっぱい */
+.page-top p:first-of-type {
+  font-size: 160px;
+
+}
+
+.page-top p:last-of-type {
+  font-size: 24px;
+
 }
 
 .index .news {
@@ -168,8 +173,20 @@ header li {
   letter-spacing: 5%;
 }
 
+.contents {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+}
 
-.message .spearch {
+.contents h1 {
+  font-size: 40px;
+  color: #DD1B57;
+  font-weight: bold;
+}
+
+/* .message .spearch {
   max-width: 790px;
   margin: 123px auto 0;
 }
@@ -222,4 +239,4 @@ footer li:first-of-type {
 footer li:not(:first-of-type) {
   margin-left: 30px;
 
-}
+} */
